@@ -71,6 +71,7 @@ class Codesnip_Ajax_Handlers {
         foreach ($disallowed as $tag) {
             if (preg_match('/<' . $tag . '\b/i', $raw_snippet)) {
                 wp_send_json_error(array('error' => array('snippet' => sprintf(
+                    // translators: %s is the HTML tag name that is not allowed
                     __('The <%s> tag is not allowed in snippets.', 'codesnip'), 
                     $tag
                 ))), 403);
@@ -173,6 +174,7 @@ class Codesnip_Ajax_Handlers {
         foreach ($disallowed as $tag) {
             if (preg_match('/<' . $tag . '\b/i', $raw_input)) {
                 wp_send_json_error(array('error' => array('snippet' => sprintf(
+                    // translators: %s is the HTML tag name that is not allowed
                     __('The <%s> tag is not allowed in snippets.', 'codesnip'), 
                     $tag
                 ))), 403);
@@ -406,6 +408,7 @@ class Codesnip_Ajax_Handlers {
         foreach ($disallowed as $tag) {
             if (preg_match('/<' . $tag . '\b/i', $raw_input)) {
                 wp_send_json_error(array('error' => array('snippet' => sprintf(
+                    // translators: %s is the HTML tag name that is not allowed
                     __('The <%s> tag is not allowed in snippets.', 'codesnip'), 
                     $tag
                 ))), 403);
