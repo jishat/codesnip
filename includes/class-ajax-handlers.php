@@ -162,7 +162,7 @@ class Codesnip_Ajax_Handlers {
             wp_send_json_error(array('error' => array('common' => __('Invalid nonce', 'codesnip'))), 403);
         }
 
-        $raw_input = isset($_POST['snippet']) ? sanitize_textarea_field(wp_unslash($_POST['snippet'])) : '';
+        $raw_input = isset($_POST['snippet']) ? wp_unslash($_POST['snippet']) : '';
 
         $disallowed = array('html', 'body', 'script', 'link', 'footer', 'iframe', 'object', 'form', 'style', 'head', 'meta', 'embed', 'applet', 'frameset', 'noscript', 'noframes', 'xml', 'base', 'math');
 
@@ -397,7 +397,7 @@ class Codesnip_Ajax_Handlers {
             wp_send_json_error(array('error' => array('title' => __('Title is required', 'codesnip'))), 400);
         }
 
-        $raw_input = isset($_POST['snippet']) ? sanitize_textarea_field(wp_unslash($_POST['snippet'])) : '';
+        $raw_input = isset($_POST['snippet']) ? wp_unslash($_POST['snippet']) : '';
         if (empty($raw_input)) {
             wp_send_json_error(array('error' => array('snippet' => __('Snippet content is required', 'codesnip'))), 400);
         }
